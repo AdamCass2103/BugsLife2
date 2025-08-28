@@ -5,23 +5,26 @@ Hopper::Hopper(int id, Position pos, Direction dir, int size, int hopLen)
 
 void Hopper::move() {
     if (!alive) return;
+
     int attempts = 0;
     while (isWayBlocked() && attempts < 10) {
         direction = randomDirection();
-        attempts++;
+        ++attempts;
     }
+
     Position nx = nextPosition(position, direction, hopLength);
     if (inBounds(nx)) {
         position = nx;
     } else {
-        // move until edge
-        for (int i = 1; i <= hopLength; i++) {
+        // step until edge (land at last valid square)
+        for (int i = 1; i <= hopLength; ++i) {
             Position step = nextPosition(position, direction, i);
             if (!inBounds(step)) {
                 position = nextPosition(position, direction, i - 1);
-                break;
+                goto recorded;
             }
         }
     }
-    path.push_back(position);
+    recorded:
+        path.push_back(position);
 }

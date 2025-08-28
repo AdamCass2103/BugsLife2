@@ -55,12 +55,6 @@ build CMakeFiles/BugsLife2.dir/main.cpp.obj: CXX_COMPILER__BugsLife2_unscanned_D
   OBJECT_DIR = CMakeFiles\BugsLife2.dir
   OBJECT_FILE_DIR = CMakeFiles\BugsLife2.dir
 
-build CMakeFiles/BugsLife2.dir/Board.cpp.obj: CXX_COMPILER__BugsLife2_unscanned_Debug C$:/Users/student/CLionProjects/BugsLife2/Board.cpp || cmake_object_order_depends_target_BugsLife2
-  DEP_FILE = CMakeFiles\BugsLife2.dir\Board.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\BugsLife2.dir
-  OBJECT_FILE_DIR = CMakeFiles\BugsLife2.dir
-
 build CMakeFiles/BugsLife2.dir/Bug.cpp.obj: CXX_COMPILER__BugsLife2_unscanned_Debug C$:/Users/student/CLionProjects/BugsLife2/Bug.cpp || cmake_object_order_depends_target_BugsLife2
   DEP_FILE = CMakeFiles\BugsLife2.dir\Bug.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
@@ -79,6 +73,12 @@ build CMakeFiles/BugsLife2.dir/Hopper.cpp.obj: CXX_COMPILER__BugsLife2_unscanned
   OBJECT_DIR = CMakeFiles\BugsLife2.dir
   OBJECT_FILE_DIR = CMakeFiles\BugsLife2.dir
 
+build CMakeFiles/BugsLife2.dir/Board.cpp.obj: CXX_COMPILER__BugsLife2_unscanned_Debug C$:/Users/student/CLionProjects/BugsLife2/Board.cpp || cmake_object_order_depends_target_BugsLife2
+  DEP_FILE = CMakeFiles\BugsLife2.dir\Board.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\BugsLife2.dir
+  OBJECT_FILE_DIR = CMakeFiles\BugsLife2.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target BugsLife2
@@ -87,7 +87,7 @@ build CMakeFiles/BugsLife2.dir/Hopper.cpp.obj: CXX_COMPILER__BugsLife2_unscanned
 #############################################
 # Link the executable BugsLife2.exe
 
-build BugsLife2.exe: CXX_EXECUTABLE_LINKER__BugsLife2_Debug CMakeFiles/BugsLife2.dir/main.cpp.obj CMakeFiles/BugsLife2.dir/Board.cpp.obj CMakeFiles/BugsLife2.dir/Bug.cpp.obj CMakeFiles/BugsLife2.dir/Crawler.cpp.obj CMakeFiles/BugsLife2.dir/Hopper.cpp.obj
+build BugsLife2.exe: CXX_EXECUTABLE_LINKER__BugsLife2_Debug CMakeFiles/BugsLife2.dir/main.cpp.obj CMakeFiles/BugsLife2.dir/Bug.cpp.obj CMakeFiles/BugsLife2.dir/Crawler.cpp.obj CMakeFiles/BugsLife2.dir/Hopper.cpp.obj CMakeFiles/BugsLife2.dir/Board.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\BugsLife2.dir

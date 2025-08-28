@@ -2,6 +2,7 @@
 #define BUG_H
 
 #include <list>
+#include <string>
 #include "Position.h"
 #include "Direction.h"
 
@@ -35,4 +36,4 @@ public:
     virtual std::string getType() const = 0;
 };
 
-#endif
+#endif // BUG_H

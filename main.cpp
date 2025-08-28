@@ -5,12 +5,12 @@
 
 int main() {
     Board board;
-    int choice;
+    int choice = -1;
 
     do {
-        std::cout << "\n1: Load bugs.txt\n2: Display all bugs\n3: Find bug\n4: Tap board\n5: Display history\n6: Display cells\n7: Run simulation\n8: Save history & exit\n0: Exit\nChoice: ";
+        std::cout << "\n1: Load bugs.txt\n2: Display all bugs\n3: Find bug\n4: Tap board\n5: Display history\n6: Display cells\n7: Run simulation\n8: Save history to file\n0: Exit\nChoice: ";
         std::cin >> choice;
-        switch(choice) {
+        switch (choice) {
             case 1:
                 board.load("bugs.txt");
                 break;
@@ -18,9 +18,10 @@ int main() {
                 board.displayAll();
                 break;
             case 3: {
-                int id; std::cout<<"ID: "; std::cin>>id;
-                auto* b = board.findById(id);
-                if (b) std::cout << b->getId()<<" "<<b->getType()<<" alive="<<b->isAlive()<<"\n";
+                int id; std::cout << "ID: "; std::cin >> id;
+                Bug* b = board.findById(id);
+                if (b) std::cout << b->getId() << " " << b->getType() << " Alive=" << (b->isAlive() ? "Yes" : "No") << "\n";
+                else std::cout << "Not found\n";
                 break;
             }
             case 4:
@@ -33,7 +34,7 @@ int main() {
                 board.displayCells();
                 break;
             case 7:
-                while (board.aliveCount()>1) {
+                while (board.aliveCount() > 1) {
                     board.tap();
                     board.displayAll();
                     std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -42,9 +43,16 @@ int main() {
                 break;
             case 8:
                 board.saveHistory("bugs_history.txt");
+                std::cout << "Saved history to bugs_history.txt\n";
+                break;
+            case 0:
+                std::cout << "Exiting\n";
+                break;
+            default:
+                std::cout << "Invalid choice\n";
                 break;
         }
-    } while(choice!=0);
+    } while (choice != 0);
 
     return 0;
 }

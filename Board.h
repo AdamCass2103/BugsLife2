@@ -2,6 +2,7 @@
 #define BOARD_H
 
 #include <vector>
+#include <string>
 #include "Bug.h"
 
 class Board {
@@ -22,4 +23,4 @@ public:
     int aliveCount() const;
 };
 
-#endif
+#endif // BOARD_H

@@ -11,7 +11,9 @@ Bug::Bug(int id, Position pos, Direction dir, int size)
     : id(id), position(pos), direction(dir), size(size), alive(true) {
     path.push_back(position);
 }
+
 Bug::~Bug() = default;
+
 int Bug::getId() const { return id; }
 Position Bug::getPosition() const { return position; }
 int Bug::getSize() const { return size; }
@@ -26,16 +28,16 @@ bool Bug::isWayBlocked() const {
 }
 
 Direction Bug::randomDirection() {
-    std::uniform_int_distribution<int> dist(1, 4);
+    std::uniform_int_distribution<int> dist(0, 3);
     return static_cast<Direction>(dist(rng()));
 }
 
 Position Bug::nextPosition(const Position& pos, Direction dir, int step) {
     Position res = pos;
-    if (dir == Direction::North) res.y -= step;
-    else if (dir == Direction::East) res.x += step;
-    else if (dir == Direction::South) res.y += step;
-    else if (dir == Direction::West) res.x -= step;
+    if (dir == Direction::NORTH) res.y -= step;
+    else if (dir == Direction::EAST) res.x += step;
+    else if (dir == Direction::SOUTH) res.y += step;
+    else if (dir == Direction::WEST) res.x -= step;
     return res;
 }
 

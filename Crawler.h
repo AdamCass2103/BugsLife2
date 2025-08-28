@@ -2,7 +2,6 @@
 #define CRAWLER_H
 
 #include "Bug.h"
-#include <string>
 
 class Crawler : public Bug {
 public:
@@ -11,4 +10,4 @@ public:
     std::string getType() const override { return "Crawler"; }
 };
 
-#endif
+#endif // CRAWLER_H
